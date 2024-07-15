@@ -27,7 +27,7 @@
 
 <p align="justify">
 
-**1. Usuarios** :heavy_check_mark
+**1. Usuarios** :heavy_check_mark:
   - id (PK)
   - nome
   - email
@@ -36,7 +36,7 @@
   - endereco (logradouro, numero, municipio, estado, CEP) (ATENÇÃO: Atributo composto)
   - data_cadastro
 
-**2. Livros** :heavy_check_mark
+**2. Livros** :heavy_check_mark:
   - id (PK)
   - titulo
   - autor (ATENÇÃO: atributo multivalorado)
@@ -46,7 +46,7 @@
   - status (disponível/indisponível)
   - usuario_id (FK para Usuario)
 
-**3. Trocas** :heavy_check_mark
+**3. Trocas** :heavy_check_mark:
   - id (PK)
   - usuario_oferecendo_id (FK para Usuario)
   - usuario_solicitando_id (FK para Usuario)
@@ -56,7 +56,7 @@
   - livro_oferecido_id (FK para Livro)
   - livro_solicitado_id (FK para Livro)
 
-**4. Avaliacoes** :heavy_check_mark
+**4. Avaliacoes** :heavy_check_mark:
   - id (PK)
   - troca_id (FK para Troca)
   - usuario_avaliador_id (FK para Usuário)
@@ -65,7 +65,7 @@
   - comentario
   - data_avaliacao
 
-**5. Mensagens** :heavy_check_mark
+**5. Mensagens** :heavy_check_mark:
   - id (PK)
   - troca_id (FK para Troca)
   - usuario_remetente_id (FK para Usuário)
