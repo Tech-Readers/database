@@ -15,7 +15,7 @@
 
 :small_blue_diamond: [Entidades e Atributos](#entidades-e-atributos-file_folder)
 
-:small_blue_diamond: [Relacionamentos](#relacionamentos-video_game)
+:small_blue_diamond: [Relacionamentos](#relacionamentos-handshake)
 
 :small_blue_diamond: [Modelo Lógico - DER](modelo_logico_der)
 
@@ -75,7 +75,7 @@
 
 </p>
 
-## Relacionamentos :video_game:
+## Relacionamentos :handshake:
 
 **1. Usuarios:**
   - Tem um endereço (relação muitos-para-um com Enderecos)
