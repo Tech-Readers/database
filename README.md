@@ -27,7 +27,7 @@
 
 <p align="justify">
 
-**1. Usuarios** :heavy_check_mark:
+**1. Usuarios** :warning:
   - id (PK)
   - nome
   - email
@@ -36,7 +36,7 @@
   - endereco (logradouro, numero, municipio, estado, CEP) (ATENÇÃO: Atributo composto)
   - data_cadastro
 
-**2. Livros** :heavy_check_mark:
+**2. Livros** :warning:
   - id (PK)
   - titulo
   - autor (ATENÇÃO: atributo multivalorado)
@@ -46,7 +46,7 @@
   - status (disponível/indisponível)
   - usuario_id (FK para Usuario)
 
-**3. Trocas** :heavy_check_mark:
+**3. Trocas** :warning:
   - id (PK)
   - usuario_oferecendo_id (FK para Usuario)
   - usuario_solicitando_id (FK para Usuario)
@@ -56,7 +56,7 @@
   - livro_oferecido_id (FK para Livro)
   - livro_solicitado_id (FK para Livro)
 
-**4. Avaliacoes** :heavy_check_mark:
+**4. Avaliacoes** :warning:
   - id (PK)
   - troca_id (FK para Troca)
   - usuario_avaliador_id (FK para Usuário)
@@ -65,7 +65,7 @@
   - comentario
   - data_avaliacao
 
-**5. Mensagens** :heavy_check_mark:
+**5. Mensagens** :warning:
   - id (PK)
   - troca_id (FK para Troca)
   - usuario_remetente_id (FK para Usuário)
@@ -77,46 +77,46 @@
 
 ## Relacionamentos :handshake:
 
-**1. Usuarios:**
+**1. Usuarios:** :warning:
   - Tem um endereço (relação muitos-para-um com Enderecos)
   - Pode fazer muitas trocas (relação um-para-muitos com Trocas)
   - Pode fazer muitas avaliações (relação um-para-muitos com Avaliacoes)
   - Pode enviar e receber muitas mensagens (relação um-para-muitos com Mensagens)
 
-**2. Enderecos:**
+**2. Enderecos:** :warning:
   - Pode ser associado a muitos usuários (relação um-para-muitos com Usuarios)
 
-**3. Usuarios e Enderecos:**
+**3. Usuarios e Enderecos:** :warning:
   - A chave estrangeira endereco_id na tabela Usuarios está correta. Assim, um usuário pode ter um endereço, e o mesmo endereço pode ser compartilhado por vários usuários.
 
-**4. Livros:**
+**4. Livros:** :warning:
   - Pertencem a um usuário (relação muitos-para-um com Usuarios)
   - Podem ser oferecidos em muitas trocas (relação um-para-muitos com Trocas)
 
-**5. Trocas:**
+**5. Trocas:** :warning:
   - Envolvem dois usuários (relação muitos-para-um com Usuarios)
   - Envolvem dois livros (relação muitos-para-um com Livros)
   - Podem ter muitas avaliações (relação um-para-muitos com Avaliacoes)
 
-**6. Usuarios e Trocas:**
+**6. Usuarios e Trocas:** :warning:
    - A tabela Trocas referencia tanto usuario_oferecendo_id quanto usuario_solicitando_id, representando os dois usuários envolvidos na troca.
 
-**7. Trocas e Livros:**
+**7. Trocas e Livros:** :warning:
    - A tabela Trocas referencia livro_oferecido_id e livro_solicitado_id, representando os livros envolvidos na troca.
 
-**8. Avaliacoes:**
+**8. Avaliacoes:** :warning:
   - Referenciam uma troca (relação muitos-para-um com Trocas)
   - Referenciam um usuário (relação muitos-para-um com Usuarios)
 
-**9. Trocas e Avaliacoes:**
+**9. Trocas e Avaliacoes:** :warning:
   - A tabela Avaliacoes possui referências troca_id e usuario_id, permitindo que cada avaliação seja associada a uma troca específica e ao usuário que fez a avaliação.
 
-**10. Mensagens:**
+**10. Mensagens:** :warning:
   - Referenciam uma troca (relação muitos-para-um com Trocas)
   - Referenciam um usuário remetente (relação muitos-para-um com Usuarios)
   - Referenciam um usuário destinatário (relação muitos-para-um com Usuarios)
 
-**11. Usuarios e Mensagens:**
+**11. Usuarios e Mensagens:** :warning:
   - A tabela Mensagens referencia usuario_remetente_id e usuario_destinatario_id, representando os usuários envolvidos na comunicação.
 
 ... 
