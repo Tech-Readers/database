@@ -19,7 +19,7 @@
 
 :small_blue_diamond: [Modelo Lógico - DER](modelo_logico_der)
 
-:small_blue_diamond: [Modelo Físico - Scrips create ](script_database_table)
+:small_blue_diamond: [Modelo Físico - Scrips Create Database Table](script_database_table)
 
 ... 
 
