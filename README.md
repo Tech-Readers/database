@@ -121,15 +121,6 @@
 
 ... 
 
-## Linguagens, tecnologias, dependências e libs utilizadas :gear: :books:
-
-
-- [PostgreSQL](https://www.postgresql.org/download/)
-- [Git](https://git-scm.com/downloads)
-- [GitHub](https://github.com/)
-  
-
-
 ## Licença 
 
 The [MIT License]() (MIT)
