@@ -17,9 +17,9 @@
 
 :small_blue_diamond: [Relacionamentos](#relacionamentos-video_game)
 
-:small_blue_diamond: [Modelo Lógico - DER](#database/modelo_logico_der)
+:small_blue_diamond: [Modelo Lógico - DER](modelo_logico_der)
 
-:small_blue_diamond: [Modelo Físico - Scrips create ](#desenvolvedorescontribuintes-octocat)
+:small_blue_diamond: [Modelo Físico - Scrips create ](script_database_table)
 
 ... 
 
