@@ -13,11 +13,9 @@
 
 ### Tópicos 
 
-:small_blue_diamond: [Descrição do projeto](#descrição-do-projeto-writing_hand)
+:small_blue_diamond: [Entidades e Atributos](#entidades-e-atributos-file_folder)
 
-:small_blue_diamond: [Objetivos do projeto](#objetivos-do-projeto-dart)
-
-:small_blue_diamond: [Funcionalidades](#funcionalidades-video_game)
+:small_blue_diamond: [Relacionamentos](#relacionamentos-video_game)
 
 :small_blue_diamond: [Linguagens, dependencias e libs utilizadas](#linguagens-dependencias-e-libs-utilizadas-books-gear)
 
@@ -25,46 +23,59 @@
 
 ... 
 
-## Descrição do projeto :writing_hand:
-
-<p align="justify">
-  Trata-se de uma plataforma em ambiente digital que facilite a troca de livros entre leitores, promovendo o compartilhamento de recursos literários e a interação social dentro da comunidade de leitores.
-</p>
-
-## Objetivos do projeto :dart:
+## Entidades e Atributos :file_folder:
 
 <p align="justify">
 
-**1. Facilitar a Troca de Livros:**
+**1. Usuarios**
+  - id (PK)
+  - nome
+  - email
+  - senha (ATENÇÃO: Deverá ser permitido apenas um cadastro por email)
+  - telefone (ATENÇÃO: atributo multivalorado)
+  - endereco (logradouro, numero, municipio, estado, CEP) (ATENÇÃO: Atributo composto)
+  - data_cadastro
 
-- Permitir que os usuários listem seus livros disponíveis para troca e busquem por títulos desejados, simplificando o processo de encontrar outros leitores interessados em realizar trocas.
+**2. Livros**
+  - id (PK)
+  - titulo
+  - autor (ATENÇÃO: atributo multivalorado)
+  - descricao
+  - genero
+  - estado_conservacao
+  - status (disponível/indisponível)
+  - usuario_id (FK para Usuario)
 
-**2. Promover a Leitura e Compartilhamento:**
+**3. Trocas**
+  - id (PK)
+  - usuario_oferecendo_id (FK para Usuario)
+  - usuario_solicitando_id (FK para Usuario)
+  - data_solitacao
+  - data_conclusao
+  - status (proposta, aceita, rejeitada, concluída)
+  - livro_oferecido_id (FK para Livro)
+  - livro_solicitado_id (FK para Livro)
 
-- Incentivar a leitura e o compartilhamento de livros, garantindo que os recursos literários sejam utilizados de maneira eficiente e alcançando um público mais amplo.
+**4. Avaliacoes**
+  - id (PK)
+  - troca_id (FK para Troca)
+  - usuario_avaliador_id (FK para Usuário)
+  - usuario_avaliado_id (FK para Usuário)
+  - nota
+  - comentario
+  - data_avaliacao
 
-**3. Construir uma Comunidade de Leitores:**
+**5. Mensagens** 
+  - id (PK)
+  - troca_id (FK para Troca)
+  - usuario_remetente_id (FK para Usuário)
+  - usuario_destinatario_id (FK para Usuário)
+  - texto
+  - data_envio
 
-- Criar um espaço onde leitores possam interagir, compartilhar experiências literárias e formar conexões significativas com outros apaixonados por leitura.
-
-**4. Aumentar a Confiança e Segurança nas Trocas:**
-
-- Implementar sistemas de avaliação e reputação para aumentar a confiança entre os usuários, garantindo que as trocas sejam realizadas de forma segura e transparente.
-
-**5. Reduzir o Acúmulo de Livros Parados:**
-
-- Oferecer uma solução para o problema de acúmulo de livros parados nas prateleiras, permitindo que livros que já foram lidos por um usuário possam trazer alegria e conhecimento a outros.
-
-**6. Melhorar a Logística de Trocas:**
-
-- Proporcionar ferramentas para organizar e coordenar a logística das trocas, reduzindo a complexidade e aumentando a eficiência do processo.
-
-**7. Oferecer uma Alternativa aos Métodos Informais:**
-
-- Substituir métodos informais e ineficazes de troca de livros, como mensagens esporádicas em grupos de redes sociais, por uma plataforma dedicada e bem projetada.
 </p>
 
-## Funcionalidades :video_game:
+## Relacionamentos :video_game:
 
 ❌ **Cadastro de Usuários:** 
   1. Permitir que os usuários se cadastrem na plataforma com informações básicas (nome, email, senha, telefone, endereço).
@@ -92,23 +103,11 @@
 
 ## Linguagens, tecnologias, dependências e libs utilizadas :gear: :books:
 
-- [React](https://pt-br.reactjs.org/docs/create-a-new-react-app.html)
-- [Javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
-- [Node](https://nodejs.org/en/download/)
+
 - [PostgreSQL](https://www.postgresql.org/download/)
-- [Prisma](https://www.prisma.io/docs)
-- [Insomnia](https://insomnia.rest/download)
 - [Git](https://git-scm.com/downloads)
 - [GitHub](https://github.com/)
   
-...
-
-## Desenvolvedores/Contribuintes :octocat:
-
-Time responsável pelo desenvolvimento do projeto
-
-| [<img src="https://avatars.githubusercontent.com/u/130801505?v=4" width=115><br><sub>Francis Lauriano</sub>](https://github.com/FrancisLauriano) |  [<img src="https://avatars2.githubusercontent.com/u/" width=115><br><sub>Tiago Lima</sub>](https://github.com/) |  [<img src="https://avatars2.githubusercontent.com/u/" width=115><br><sub>Cleisson Silva</sub>](https://github.com) | [<img src="https://avatars2.githubusercontent.com/u/" width=115><br><sub>Ronielson Braga</sub>](https://github.com) | [<img src="https://avatars2.githubusercontent.com/u/" width=115><br><sub>Francini Ávila</sub>](https://github.com) |
-| :---: | :---: | :---: | :---: | :---:
 
 
 ## Licença 
