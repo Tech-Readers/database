@@ -13,13 +13,13 @@
 
 ### Tópicos 
 
-:small_blue_diamond: [Entidades e Atributos](#entidades-e-atributos-file_folder)
+:small_blue_diamond: [Entidades e Atributos :warning:](#entidades-e-atributos-file_folder)
 
-:small_blue_diamond: [Relacionamentos](#relacionamentos-handshake)
+:small_blue_diamond: [Relacionamentos :warning:](#relacionamentos-handshake)
 
-:small_blue_diamond: [Modelo Lógico - DER](modelo_logico_der)
+:small_blue_diamond: [Modelo Lógico - DER :warning:](modelo_logico_der)
 
-:small_blue_diamond: [Modelo Físico - Scrips Create Database Table](scripts_database_table)
+:small_blue_diamond: [Modelo Físico - Scrips Create Database Table :x:](scripts_database_table)
 
 ... 
 
