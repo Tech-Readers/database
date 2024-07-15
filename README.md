@@ -17,9 +17,9 @@
 
 :small_blue_diamond: [Relacionamentos](#relacionamentos-video_game)
 
-:small_blue_diamond: [Linguagens, dependencias e libs utilizadas](#linguagens-dependencias-e-libs-utilizadas-books-gear)
+:small_blue_diamond: [Modelo Lógico - DER](#linguagens-dependencias-e-libs-utilizadas-books-gear)
 
-:small_blue_diamond: [Desenvolvedores/Contribuintes](#desenvolvedorescontribuintes-octocat)
+:small_blue_diamond: [Modelo Físico - Scrips create ](#desenvolvedorescontribuintes-octocat)
 
 ... 
 
@@ -77,27 +77,47 @@
 
 ## Relacionamentos :video_game:
 
-❌ **Cadastro de Usuários:** 
-  1. Permitir que os usuários se cadastrem na plataforma com informações básicas (nome, email, senha, telefone, endereço).
+**1. Usuarios:**
+  - Tem um endereço (relação muitos-para-um com Enderecos)
+  - Pode fazer muitas trocas (relação um-para-muitos com Trocas)
+  - Pode fazer muitas avaliações (relação um-para-muitos com Avaliacoes)
+  - Pode enviar e receber muitas mensagens (relação um-para-muitos com Mensagens)
 
-❌ **Gerenciamento de Livros:** 
-  1. Permitir que os usuários adicionem livros à sua lista de livros disponíveis para troca, incluindo informações como título, autor, gênero, e condição do livro.
-  2. Permitir que os usuários removam ou atualizem informações dos seus livros listados.
+**2. Enderecos:**
+  - Pode ser associado a muitos usuários (relação um-para-muitos com Usuarios)
 
-❌ **Busca de Livros:** 
-  1. Implementar uma funcionalidade de busca que permita aos usuários procurar livros por título, autor, gênero ou condição.
+**3. Usuarios e Enderecos:**
+  - A chave estrangeira endereco_id na tabela Usuarios está correta. Assim, um usuário pode ter um endereço, e o mesmo endereço pode ser compartilhado por vários usuários.
 
-❌ **Propostas de Troca:** 
-  1. Permitir que os usuários enviem propostas de troca para outros usuários, especificando quais livros estão oferecendo e quais desejam receber.
+**4. Livros:**
+  - Pertencem a um usuário (relação muitos-para-um com Usuarios)
+  - Podem ser oferecidos em muitas trocas (relação um-para-muitos com Trocas)
 
-❌ **Histórico de Trocas:**  
-  1. Registrar todas as trocas realizadas para manter um histórico que pode ser visualizado pelos usuários.
+**5. Trocas:**
+  - Envolvem dois usuários (relação muitos-para-um com Usuarios)
+  - Envolvem dois livros (relação muitos-para-um com Livros)
+  - Podem ter muitas avaliações (relação um-para-muitos com Avaliacoes)
 
-❌ **Sistema de Avaliação e Reputação:**  
-  1. Implementar um sistema de avaliação onde os usuários possam avaliar suas experiências de troca, contribuindo para a reputação de outros usuários.
+**6. Usuarios e Trocas:**
+   - A tabela Trocas referencia tanto usuario_oferecendo_id quanto usuario_solicitando_id, representando os dois usuários envolvidos na troca.
 
-❌ **Mensagens:** 
-  1. Permitir a comunicação direta entre usuários através de mensagens para coordenar detalhes da troca
+**7. Trocas e Livros:**
+   - A tabela Trocas referencia livro_oferecido_id e livro_solicitado_id, representando os livros envolvidos na troca.
+
+**8. Avaliacoes:**
+  - Referenciam uma troca (relação muitos-para-um com Trocas)
+  - Referenciam um usuário (relação muitos-para-um com Usuarios)
+
+**9. Trocas e Avaliacoes:**
+  - A tabela Avaliacoes possui referências troca_id e usuario_id, permitindo que cada avaliação seja associada a uma troca específica e ao usuário que fez a avaliação.
+
+**10. Mensagens:**
+  - Referenciam uma troca (relação muitos-para-um com Trocas)
+  - Referenciam um usuário remetente (relação muitos-para-um com Usuarios)
+  - Referenciam um usuário destinatário (relação muitos-para-um com Usuarios)
+
+**11. Usuarios e Mensagens:**
+  - A tabela Mensagens referencia usuario_remetente_id e usuario_destinatario_id, representando os usuários envolvidos na comunicação.
 
 ... 
 
