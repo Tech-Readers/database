@@ -17,7 +17,7 @@
 
 :small_blue_diamond: [Relacionamentos](#relacionamentos-video_game)
 
-:small_blue_diamond: [Modelo Lógico - DER](#linguagens-dependencias-e-libs-utilizadas-books-gear)
+:small_blue_diamond: [Modelo Lógico - DER](#database/modelo_logico_der)
 
 :small_blue_diamond: [Modelo Físico - Scrips create ](#desenvolvedorescontribuintes-octocat)
 
