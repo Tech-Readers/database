@@ -1,8 +1,8 @@
 <h1>Conectando Leitores</h1> 
 
 <p align="center">
-  <img src="http://img.shields.io/static/v1?label=Draw.io&message=16&color=f08705&style=for-the-badge&logo=diagramsdotnet"/>
-  <img src="http://img.shields.io/static/v1?label=Workbench MySQL&message=16&color=4479a1&style=for-the-badge&logo=mysql&logoColor=f5f5f5"/>
+  <img src="http://img.shields.io/static/v1?label=Draw.io&message=24.6.4&color=f08705&style=for-the-badge&logo=diagramsdotnet"/>
+  <img src="http://img.shields.io/static/v1?label=Workbench MySQL&message=8.0.38&color=4479a1&style=for-the-badge&logo=mysql&logoColor=f5f5f5"/>
   <img src="http://img.shields.io/static/v1?label=PostgreSQL&message=16&color=4169e1&style=for-the-badge&logo=postgresql&logoColor=f5f5f5"/>
   <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=RED&style=for-the-badge"/>
   <img src="http://img.shields.io/static/v1?label=STATUS&message=CONCLUIDO&color=GREEN&style=for-the-badge"/>
