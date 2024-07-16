@@ -73,6 +73,7 @@
   - id (PK)
   - usuario_remetente_id (FK para Usuário)
   - usuario_destinatario_id (FK para Usuário)
+  - troca_id (FK para Troca)
   - texto
   - data_envio
   - status (não lida, lida) 
