@@ -64,13 +64,13 @@
   - comentario
   - data_avaliacao
 
-**5. Mensagens** :warning:
+**5. Notificacoes** :warning:
   - id (PK)
-  - troca_id (FK para Troca)
   - usuario_remetente_id (FK para Usuário)
   - usuario_destinatario_id (FK para Usuário)
   - texto
   - data_envio
+  - status (não lida, lida) 
 
 </p>
 
@@ -110,13 +110,12 @@
 **9. Trocas e Avaliacoes:** :warning:
   - A tabela Avaliacoes possui referências troca_id e usuario_id, permitindo que cada avaliação seja associada a uma troca específica e ao usuário que fez a avaliação.
 
-**10. Mensagens:** :warning:
-  - Referenciam uma troca (relação muitos-para-um com Trocas)
+**10. Notificacoes:** :warning:
   - Referenciam um usuário remetente (relação muitos-para-um com Usuarios)
   - Referenciam um usuário destinatário (relação muitos-para-um com Usuarios)
 
-**11. Usuarios e Mensagens:** :warning:
-  - A tabela Mensagens referencia usuario_remetente_id e usuario_destinatario_id, representando os usuários envolvidos na comunicação.
+**11. Usuarios e Notificacoes:** :warning:
+  - A tabela Notificacoes referencia usuario_remetente_id e usuario_destinatario_id, representando os usuários envolvidos na comunicação.
 
 ... 
 
