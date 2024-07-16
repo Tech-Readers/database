@@ -54,7 +54,7 @@
   - status_troca (proposta, aceita, rejeitada, pendente, em andamento, concluída)
   - livro_oferecido_id (FK para Livro)
   - livro_solicitado_id (FK para Livro)
-  - metodo_envio (presencial ou correios)
+  - metodo_troca (presencial ou correios)
   - local_encontro (para presencial)
   - data_encontro (para presencial)
   - horario_encontro (para presencial)
