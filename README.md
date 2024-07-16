@@ -51,13 +51,14 @@
   - usuario_solicitando_id (FK para Usuario)
   - data_solitacao
   - data_conclusao
-  - status (proposta, aceita, rejeitada, concluída)
+  - status_troca (proposta, aceita, rejeitada, pendente, em andamento, concluída)
   - livro_oferecido_id (FK para Livro)
   - livro_solicitado_id (FK para Livro)
   - metodo_envio (presencial ou correios)
   - local_encontro (para presencial)
   - data_encontro (para presencial)
   - horario_encontro (para presencial)
+  - codigo_rastreio (para correios)
 
 **4. Avaliacoes** :warning:
   - id (PK)
