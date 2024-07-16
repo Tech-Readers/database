@@ -58,7 +58,6 @@
   - local_encontro (para presencial)
   - data_encontro (para presencial)
   - horario_encontro (para presencial)
-  - endereco_envio_id (FK para Endereco) (para correios)
 
 **4. Avaliacoes** :warning:
   - id (PK)
@@ -116,11 +115,10 @@
   - A tabela Avaliacoes possui referências troca_id e usuario_id, permitindo que cada avaliação seja associada a uma troca específica e ao usuário que fez a avaliação.
 
 **10. Notificacoes:** :warning:
+  - A tabela Notificacoes referencia usuario_remetente_id e usuario_destinatario_id, representando os usuários envolvidos.
   - Referenciam um usuário remetente (relação muitos-para-um com Usuarios)
   - Referenciam um usuário destinatário (relação muitos-para-um com Usuarios)
-
-**11. Usuarios e Notificacoes:** :warning:
-  - A tabela Notificacoes referencia usuario_remetente_id e usuario_destinatario_id, representando os usuários envolvidos na comunicação.
+  - Uma troca pode gerar várias Notificações.
 
 ... 
 
