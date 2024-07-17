@@ -86,37 +86,31 @@
   - Tem um endereço (relação muitos-para-um com Enderecos)
   - Pode fazer muitas trocas (relação um-para-muitos com Trocas)
   - Pode fazer muitas avaliações (relação um-para-muitos com Avaliacoes)
-  - Pode enviar e receber muitas mensagens (relação um-para-muitos com Mensagens)
+  - Pode "enviar" e receber muitas notificações (relação um-para-muitos com Notificações)
 
 **2. Enderecos:** :warning:
   - Pode ser associado a muitos usuários (relação um-para-muitos com Usuarios)
-
-**3. Usuarios e Enderecos:** :warning:
   - Um usuário pode ter um endereço, e o mesmo endereço pode ser compartilhado por vários usuários.
 
-**4. Livros:** :warning:
+**3. Livros:** :warning:
   - Pertencem a um usuário (relação muitos-para-um com Usuarios)
   - Podem ser oferecidos em muitas trocas (relação um-para-muitos com Trocas)
 
-**5. Trocas:** :warning:
-  - Envolvem dois usuários (relação muitos-para-um com Usuarios)
-  - Envolvem dois livros (relação muitos-para-um com Livros)
-  - Podem ter muitas avaliações (relação um-para-muitos com Avaliacoes)
+**4. Trocas:** :warning:
+  - A tabela Trocas referencia tanto usuario_oferecendo_id quanto usuario_solicitando_id, representando os dois usuários envolvidos na troca.
+  - Envolvem dois usuários (relação muitos-para-um com Usuarios).
+  - Envolvem dois livros (relação muitos-para-um com Livros).
+  - O usuário pode realizar varias trocas.
 
-**6. Usuarios e Trocas:** :warning:
-   - A tabela Trocas referencia tanto usuario_oferecendo_id quanto usuario_solicitando_id, representando os dois usuários envolvidos na troca.
-
-**7. Trocas e Livros:** :warning:
+**5. Trocas e Livros:** :warning:
    - A tabela Trocas referencia livro_oferecido_id e livro_solicitado_id, representando os livros envolvidos na troca.
 
-**8. Avaliacoes:** :warning:
+**6. Avaliacoes:** :warning:
   - Referenciam uma troca (relação muitos-para-um com Trocas)
-  - Referenciam um usuário (relação muitos-para-um com Usuarios)
+  - Referenciam dois usuários (relação muitos-para-um com Usuarios)
+  - A tabela Avaliacoes possui referências troca_id e usuario_id, permitindo que cada avaliação seja associada a uma troca específica e ao usuário que fez e o usuário que irá receber a avaliação .
 
-**9. Trocas e Avaliacoes:** :warning:
-  - A tabela Avaliacoes possui referências troca_id e usuario_id, permitindo que cada avaliação seja associada a uma troca específica e ao usuário que fez a avaliação.
-
-**10. Notificacoes:** :warning:
+**7. Notificacoes:** :warning:
   - A tabela Notificacoes referencia usuario_remetente_id e usuario_destinatario_id, representando os usuários envolvidos.
   - Referenciam um usuário remetente (relação muitos-para-um com Usuarios)
   - Referenciam um usuário destinatário (relação muitos-para-um com Usuarios)
