@@ -92,7 +92,7 @@
   - Pode ser associado a muitos usuários (relação um-para-muitos com Usuarios)
 
 **3. Usuarios e Enderecos:** :warning:
-  - A chave estrangeira endereco_id na tabela Usuarios está correta. Assim, um usuário pode ter um endereço, e o mesmo endereço pode ser compartilhado por vários usuários.
+  - Um usuário pode ter um endereço, e o mesmo endereço pode ser compartilhado por vários usuários.
 
 **4. Livros:** :warning:
   - Pertencem a um usuário (relação muitos-para-um com Usuarios)
