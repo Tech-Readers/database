@@ -66,7 +66,7 @@
   - codigo_rastreio (para correios)
   - **OBS:**
     - Campo disponibiliza_contato_telefone:
-        1. Foi adicionado corretamente na tabela Trocas com o tipo TINYINT para representar um valor booleano.
+        1. Foi adicionado com o tipo TINYINT para representar um valor booleano.
         2. Para garantir que o valor padrão seja 0 (false), foi configurado no campo Default.
     - Os checks de validação chk_status_troca, chk_metodo_troca e chk_presencial foram adicionados para assegurar a integridade dos dados, evitando dados incorretos ou     
     inconsistentes:
