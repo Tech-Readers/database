@@ -34,7 +34,7 @@
   - telefone (ATENÇÃO: atributo multivalorado)
   - endereco (logradouro, numero, municipio, estado, CEP) (ATENÇÃO: Atributo composto)
   - data_cadastro
-  **OBS:**
+  - **OBS:**
     - email com a cláusula UNIQUE: Restrição que garante que todos os valores na coluna email sejam únicos em toda a tabela.
     - data_cadastro com cláusula DEFAULT CURRENT_TIMESTAMP: Define que por padrão, será preenchida com a data e hora atuais no momento
     em que um novo registro é inserido na tabela.
@@ -64,7 +64,7 @@
   - horario_encontro (para presencial)
   - disponibiliza_contato_telefone
   - codigo_rastreio (para correios)
-  **OBS:**
+  - **OBS:**
     - Campo disponibiliza_contato_telefone:
         1. Foi adicionado corretamente na tabela Trocas com o tipo TINYINT para representar um valor booleano.
         2. Para garantir que o valor padrão seja 0 (false), foi configurado no campo Default.
@@ -86,7 +86,7 @@
   - nota
   - comentario
   - data_avaliacao
-  **OBS:**
+  - **OBS:**
     - data_avaliacao com cláusula DEFAULT CURRENT_TIMESTAMP: Define que por padrão, será preenchida com a data e hora atuais no momento
     em que um novo registro é inserido na tabela.
 
@@ -98,7 +98,7 @@
   - texto
   - data_envio
   - status (não lida, lida)
-  **OBS:**
+  - **OBS:**
     - data_envio com cláusula DEFAULT CURRENT_TIMESTAMP: Define que por padrão, será preenchida com a data e hora atuais no momento
     em que um novo registro é inserido na tabela.
 
