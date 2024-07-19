@@ -12,13 +12,13 @@
 
 ### Tópicos 
 
-:small_blue_diamond: [Entidades e Atributos](#entidades-e-atributos-file_folder) :warning:
+:small_blue_diamond: [Entidades e Atributos](#entidades-e-atributos-file_folder) :heavy_check_mark:
 
-:small_blue_diamond: [Relacionamentos](#relacionamentos-handshake) :warning:
+:small_blue_diamond: [Relacionamentos](#relacionamentos-handshake) :heavy_check_mark:
 
-:small_blue_diamond: [Modelo Lógico - DER](modelo_logico_der) :warning:
+:small_blue_diamond: [Modelo Lógico - DER](modelo_logico_der) :heavy_check_mark:
 
-:small_blue_diamond: [Modelo Físico - Scrips Create Database Table](scripts_database_table) :x:
+:small_blue_diamond: [Modelo Físico - Scrips Create Database Table](scripts_database_table) :heavy_check_mark:
 
 ... 
 
@@ -26,7 +26,7 @@
 
 <p align="justify">
 
-**1. Usuarios** :warning:
+**1. Usuarios** :heavy_check_mark:
   - id (PK)
   - nome
   - email
@@ -39,7 +39,7 @@
     - data_cadastro com cláusula DEFAULT CURRENT_TIMESTAMP: Define que por padrão, será preenchida com a data e hora atuais no momento
     em que um novo registro é inserido na tabela.
 
-**2. Anuncios** :warning:
+**2. Anuncios** :heavy_check_mark:
   - id INT (PK)
   - data_criacao 
   - data_conclusao 
@@ -56,7 +56,7 @@
     - data_criacao com cláusula DEFAULT CURRENT_TIMESTAMP: Define que por padrão, será preenchida com a data e hora atuais no momento
     em que um novo registro é inserido na tabela.
    
-**3. Avaliacoes** :warning:
+**3. Avaliacoes** :heavy_check_mark:
   - id (PK)
   - data_avaliacao
   - nota
@@ -69,7 +69,7 @@
     - data_avaliacao com cláusula DEFAULT CURRENT_TIMESTAMP: Define que por padrão, será preenchida com a data e hora atuais no momento
     em que um novo registro é inserido na tabela.
 
-**4. Mensagens** :warning:
+**4. Mensagens** :heavy_check_mark:
   - id (PK)
   - usuario_remetente_id (FK para Usuário)
   - usuario_destinatario_id (FK para Usuário)
@@ -86,34 +86,34 @@
 
 ## Relacionamentos :handshake:
 
-**1. Usuarios e Enderecos:** :warning:
+**1. Usuarios e Enderecos:** :heavy_check_mark:
   - Muitos-para-Um (N:1).
   - Um usuário (Usuarios) pode ter um único endereço (Enderecos).
   - Cada endereço pode ser associado a muitos usuários.
   - Chave Estrangeira: endereco_id em Usuarios refere-se a id em Enderecos.
 
-**2. Usuarios e Telefones:** :warning:
+**2. Usuarios e Telefones:** :heavy_check_mark:
  - Um-para-Muitos (1:N).
  - Um usuário (Usuarios) pode ter vários telefones (Telefones).
  - Cada telefone está associado a um único usuário.
  - Chave Estrangeira: usuario_id em Telefones refere-se a id em Usuarios.
 
-**3. Usuarios e Anuncios:** :warning:
+**3. Usuarios e Anuncios:** :heavy_check_mark:
   - Um-para-Muitos (1:N).
   - Um usuário pode criar vários anúncios de troca de livros, mas cada anúncio é criado por um único usuário.
   - Chave Estrangeira: anunciante_id em Anuncios refere-se a id em Usuarios.
 
-**4. Usuarios e Avaliacoes:** :warning:
+**4. Usuarios e Avaliacoes:** :heavy_check_mark:
   - Um-para-Muitos (1:N).
   - Um usuário pode fazer várias avaliações de trocas, mas cada avaliação é feita por um único usuário.
   - Chave Estrangeira: usuario_avaliador_id em Avaliacoes refere-se a id em Usuarios.
 
-**5. Anuncios e Avaliacoes:** :warning:
+**5. Anuncios e Avaliacoes:** :heavy_check_mark:
   - Relacionamento: Zero-para-Muitos (0:N).
   - Anúncio pode receber várias avaliações, mas cada avaliação pertence a um único anúncio.
   - Chave Estrangeira: anuncio_id em Avaliacoes refere-se a id em Anuncios.
 
-**6. Usuarios e Mensagens:** :warning:
+**6. Usuarios e Mensagens:** :heavy_check_mark:
   - Um-para-Muitos (1:N).
   - Um usuário pode enviar várias mensagens, mas cada mensagem é enviada por um único usuário.
   - Um usuário pode receber várias mensagens, mas cada mensagem é recebida por um único usuário.
@@ -121,7 +121,7 @@
     - usuario_remetente_id em Mensagens refere-se a id em Usuarios.
     - usuario_destinatario_id em Mensagens refere-se a id em Usuarios.
 
-**7. Anuncios e Mensagens:** :warning:
+**7. Anuncios e Mensagens:** :heavy_check_mark:
   - Relacionamento: Um-para-Muitos (1:N).
   - Um anúncio pode estar associado a várias mensagens (discussões sobre o anúncio), mas cada mensagem está associada a um único anúncio.
   - Chave Estrangeira: anuncio_id em Mensagens refere-se a id em Anuncios.
