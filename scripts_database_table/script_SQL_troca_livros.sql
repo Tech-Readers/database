@@ -37,10 +37,10 @@ CREATE TABLE Anuncios (
     titulo VARCHAR(255) NOT NULL,
     titulo_livro_oferecido VARCHAR(255) NOT NULL,
     autor_livro_oferecido VARCHAR(255) NOT NULL,
-    genero_livro_oferecido VARCHAR(100),
+    genero_livro_oferecido VARCHAR(100) NOT NULL,
     titulo_livro_solicitado VARCHAR(255) NOT NULL,
     autor_livro_solicitado VARCHAR(255) NOT NULL,
-    genero_livro_oferecido VARCHAR(100),
+    genero_livro_oferecido VARCHAR(100) NOT NULL,
     descricao LONGTEXT,
     anunciante_id INT NOT NULL,
     FOREIGN KEY (anunciante_id) REFERENCES Usuarios(id)
