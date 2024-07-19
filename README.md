@@ -56,7 +56,6 @@
     - data_criacao com cláusula DEFAULT CURRENT_TIMESTAMP: Define que por padrão, será preenchida com a data e hora atuais no momento
     em que um novo registro é inserido na tabela.
    
-
 **3. Avaliacoes** :warning:
   - id (PK)
   - data_avaliacao
