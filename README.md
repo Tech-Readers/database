@@ -39,7 +39,7 @@
     - data_cadastro com cláusula DEFAULT CURRENT_TIMESTAMP: Define que por padrão, será preenchida com a data e hora atuais no momento
     em que um novo registro é inserido na tabela.
 
-**2. Trocas** :warning:
+**2. Anuncios** :warning:
   - id INT (PK)
   - data_criacao 
   - data_conclusao 
