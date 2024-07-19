@@ -89,7 +89,7 @@
 
 **1. Usuarios e Enderecos:** :warning:
   - Muitos-para-Um (N:1).
-  - Um usuário (Usuarios) pode ter um endereço (Enderecos).
+  - Um usuário (Usuarios) pode ter um único endereço (Enderecos).
   - Cada endereço pode ser associado a muitos usuários.
   - Chave Estrangeira: endereco_id em Usuarios refere-se a id em Enderecos.
 
@@ -99,56 +99,34 @@
  - Cada telefone está associado a um único usuário.
  - Chave Estrangeira: usuario_id em Telefones refere-se a id em Usuarios.
 
-**3. Usuarios e Livros:** :warning:
+**3. Usuarios e Anuncios:** :warning:
   - Um-para-Muitos (1:N).
-  - Um usuário (Usuarios) pode ter vários livros (Livros).
-  - Cada livro pertence a um único usuário.
-  - Chave Estrangeira: usuario_id em Livros refere-se a id em Usuarios.
+  - Um usuário pode criar vários anúncios de troca de livros, mas cada anúncio é criado por um único usuário.
+  - Chave Estrangeira: anunciante_id em Anuncios refere-se a id em Usuarios.
 
-**4. Usuarios e Trocas:** :warning:
-  - Um-para-Muitos (1:N) (duas vezes).
-  - Um usuário (Usuarios) pode oferecer várias trocas (Trocas) e solicitar várias trocas.
-  - Cada troca está associada a um único usuário que oferece (usuario_oferecendo_id) e um único usuário que solicita (usuario_solicitador_id).
-  - Chave Estrangeira:
-    - usuario_oferecendo_id em Trocas refere-se a id em Usuarios.
-    - usuario_solicitador_id em Trocas refere-se a id em Usuarios.
+**4. Usuarios e Avaliacoes:** :warning:
+  - Um-para-Muitos (1:N).
+  - Um usuário pode fazer várias avaliações de trocas, mas cada avaliação é feita por um único usuário.
+  - Chave Estrangeira: usuario_avaliador_id em Avaliacoes refere-se a id em Usuarios.
 
-**5. Usuarios e Notificacoes:** :warning:
-  - Relacionamento: Um-para-Muitos (1:N) (duas vezes).
-  - Um usuário (Usuarios) pode enviar várias notificações (Notificacoes) e receber várias notificações.
-  - Cada notificação está associada a um único usuário que envia (usuario_remetente_id) e um único usuário que recebe (usuario_destinatario_id).
-  - Chave Estrangeira:
-    - usuario_remetente_id em Notificacoes refere-se a id em Usuarios.
-    - usuario_destinatario_id em Notificacoes refere-se a id em Usuarios.
+**5. Anuncios e Avaliacoes:** :warning:
+  - Relacionamento: Zero-para-Muitos (0:N).
+  - Anúncio pode receber várias avaliações, mas cada avaliação pertence a um único anúncio.
+  - Chave Estrangeira: anuncio_id em Avaliacoes refere-se a id em Anuncios.
 
-**6. Usuarios e Avaliacoes:** :warning:
-  - Um-para-Muitos (1:N) (duas vezes).
-  - Um usuário (Usuarios) pode avaliar vários outros usuários (Avaliacoes) e pode ser avaliado por vários outros usuários.
-  - Cada avaliação está associada a um único usuário que avalia (usuario_avaliador_id) e um único usuário que é avaliado (usuario_avaliado_id).
+**6. Usuarios e Mensagens:** :warning:
+  - Um-para-Muitos (1:N).
+  - Um usuário pode enviar várias mensagens, mas cada mensagem é enviada por um único usuário.
+  - Um usuário pode receber várias mensagens, mas cada mensagem é recebida por um único usuário.
   - Chave Estrangeira:
-    - usuario_avaliador_id em Avaliacoes refere-se a id em Usuarios.
-    - usuario_avaliado_id em Avaliacoes refere-se a id em Usuarios.
+    - usuario_remetente_id em Mensagens refere-se a id em Usuarios.
+    - usuario_destinatario_id em Mensagens refere-se a id em Usuarios.
+
+**7. Anuncios e Mensagens:** :warning:
+  - Relacionamento: Um-para-Muitos (1:N).
+  - Um anúncio pode estar associado a várias mensagens (discussões sobre o anúncio), mas cada mensagem está associada a um único anúncio.
+  - Chave Estrangeira: anuncio_id em Mensagens refere-se a id em Anuncios.
  
-**7. Livros e Trocas:** :warning:
-  - Relacionamento: Um-para-Muitos (1:N) (duas vezes).
-  - Um livro (Livros) pode ser oferecido em várias trocas (Trocas) e solicitado em várias trocas.
-  - Cada troca está associada a um único livro oferecido (livro_oferecido_id) e um único livro solicitado (livro_solicitado_id).
-  - Chave Estrangeira:
-    - livro_oferecido_id em Trocas refere-se a id em Livros.
-    - livro_solicitado_id em Trocas refere-se a id em Livros.
-
-**8. Trocas e Notificacoes:** :warning:
-  - Um-para-Muitos (1:N).
-  - Uma troca (Trocas) pode ter várias notificações (Notificacoes).
-  - Cada notificação está associada a uma única troca.
-  - Chave Estrangeira: troca_id em Notificacoes refere-se a id em Trocas.
-
-**9. Trocas e Avaliacoes:** :warning:
-  - zero-para-Muitos (0:N).
-  - Uma troca (Trocas) pode ter zero ou várias avaliações (Avaliacoes).
-  - Cada avaliação está associada a uma única troca.
-  - Chave Estrangeira: troca_id em Avaliacoes refere-se a id em Trocas.
-    
 ... 
 
 ## Licença 
