@@ -39,68 +39,49 @@
     - data_cadastro com cláusula DEFAULT CURRENT_TIMESTAMP: Define que por padrão, será preenchida com a data e hora atuais no momento
     em que um novo registro é inserido na tabela.
 
-**2. Livros** :warning:
-  - id (PK)
-  - titulo
-  - autor (ATENÇÃO: atributo multivalorado)
-  - descricao
-  - genero
-  - estado_conservacao
-  - status (disponível/indisponível)
-  - usuario_id (FK para Usuario)
-
-**3. Trocas** :warning:
-  - id (PK)
-  - usuario_oferecendo_id (FK para Usuario)
-  - usuario_solicitando_id (FK para Usuario)
-  - data_solitacao
-  - data_conclusao
-  - status_troca (proposta, aceita, rejeitada, pendente, em andamento, concluída)
-  - livro_oferecido_id (FK para Livro)
-  - livro_solicitado_id (FK para Livro)
-  - metodo_troca (presencial ou correios)
-  - local_encontro (para presencial)
-  - data_encontro (para presencial)
-  - horario_encontro (para presencial)
-  - disponibiliza_contato_telefone
-  - codigo_rastreio (para correios)
+**2. Trocas** :warning:
+  - id INT (PK)
+  - data_criacao 
+  - data_conclusao 
+  - titulo 
+  - titulo_livro_oferecido
+  - autor_livro_oferecido 
+  - genero_livro_oferecido 
+  - titulo_livro_solicitado 
+  - autor_livro_solicitado 
+  - genero_livro_oferecido 
+  - descricao 
+  - anunciante_id INT (FK para Usuarios)
   - **OBS:**
-    - Campo disponibiliza_contato_telefone:
-        1. Foi adicionado com o tipo TINYINT para representar um valor booleano.
-        2. Para garantir que o valor padrão seja 0 (false), foi configurado no campo Default.
-    - Os checks de validação chk_status_troca, chk_metodo_troca e chk_presencial foram adicionados para assegurar a integridade dos dados, evitando dados incorretos ou     
-    inconsistentes:
-        1. chk_presencial CHECK: garantir que se o método de entrega for presencial, os campos local_encontro, data_encontro e horario_encontro não sejam nulos.
-        Se o método de entrega for correios, esses campos podem ser nulos.
-        2. chk_status_troca: A condição especifica que o valor da coluna status_troca deve ser um dos seguintes valores:'proposta', 'aceita', 'rejeitada', 'pendente', 'em 
-        andamento', 'concluída'.
-        3. chk_metodo_troca: A condição especifica que o valor da coluna metodo_troca deve ser um dos seguintes valores: 'presencial', 'correios'.
-    - data_solitacao e data_conclusao com cláusula DEFAULT CURRENT_TIMESTAMP: Define que por padrão, será preenchida com a data e hora atuais no momento
+    - data_criacao com cláusula DEFAULT CURRENT_TIMESTAMP: Define que por padrão, será preenchida com a data e hora atuais no momento
     em que um novo registro é inserido na tabela.
+   
 
-**4. Avaliacoes** :warning:
+**3. Avaliacoes** :warning:
   - id (PK)
-  - troca_id (FK para Troca)
-  - usuario_avaliador_id (FK para Usuário)
-  - usuario_avaliado_id (FK para Usuário)
+  - data_avaliacao
   - nota
   - comentario
-  - data_avaliacao
+  - qtd_like INT
+  - usuario_avaliador_id INT (FK para Usuarios)
+  - anuncio_id INT (FK para Anuncios)
+  
   - **OBS:**
     - data_avaliacao com cláusula DEFAULT CURRENT_TIMESTAMP: Define que por padrão, será preenchida com a data e hora atuais no momento
     em que um novo registro é inserido na tabela.
 
-**5. Notificacoes** :warning:
+**4. Mensagens** :warning:
   - id (PK)
   - usuario_remetente_id (FK para Usuário)
   - usuario_destinatario_id (FK para Usuário)
-  - troca_id (FK para Troca)
+  - anuncio_id INT (FK para Anuncios)
   - texto
   - data_envio
-  - status (não lida, lida)
+  - lido (false, true)
   - **OBS:**
     - data_envio com cláusula DEFAULT CURRENT_TIMESTAMP: Define que por padrão, será preenchida com a data e hora atuais no momento
     em que um novo registro é inserido na tabela.
+    - O atributo lido é por default False.
 
 </p>
 
