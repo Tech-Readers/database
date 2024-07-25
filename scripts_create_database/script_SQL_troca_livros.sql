@@ -40,8 +40,8 @@ CREATE TABLE Anuncios (
     genero_livro_oferecido VARCHAR(100) NOT NULL,
     titulo_livro_solicitado VARCHAR(255) NOT NULL,
     autor_livro_solicitado VARCHAR(255) NOT NULL,
-    genero_livro_oferecido VARCHAR(100) NOT NULL,
-    descricao LONGTEXT,
+    genero_livro_solicitado VARCHAR(100) NOT NULL,
+    descricao TEXT,
     anunciante_id INTEGER NOT NULL,
     FOREIGN KEY (anunciante_id) REFERENCES Usuarios(id)
 );
@@ -49,7 +49,7 @@ CREATE TABLE Anuncios (
 -- Tabela Mensagens
 CREATE TABLE Mensagens (
     id SERIAL PRIMARY KEY,
-    texto LONGTEXT NOT NULL,
+    texto TEXT NOT NULL,
     data_envio TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     lido BOOLEAN DEFAULT FALSE,
     usuario_remetente_id INTEGER NOT NULL,
@@ -64,7 +64,7 @@ CREATE TABLE Mensagens (
 CREATE TABLE Avaliacoes (
     id SERIAL PRIMARY KEY,
     nota INTEGER NOT NULL,
-    comentario LONGTEXT,
+    comentario TEXT,
     data_avaliacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     qtd_like INTEGER DEFAULT 0,
     usuario_avaliador_id INTEGER NOT NULL,
