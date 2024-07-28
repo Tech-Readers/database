@@ -4,7 +4,7 @@ CREATE TABLE Enderecos (
     logradouro VARCHAR(255) NOT NULL,
     numero VARCHAR(45),
     bairro VARCHAR(255),
-    complemento VARCHAR(45),
+    complemento VARCHAR(255),
     cep CHAR(8) NOT NULL,
     municipio VARCHAR(255) NOT NULL,
     uf CHAR(2) NOT NULL
@@ -15,7 +15,7 @@ CREATE TABLE Usuarios (
     id SERIAL PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
-    senha VARCHAR(45) NOT NULL,
+    senha VARCHAR(255) NOT NULL,
     data_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     endereco_id INTEGER,
     FOREIGN KEY (endereco_id) REFERENCES Enderecos(id)
