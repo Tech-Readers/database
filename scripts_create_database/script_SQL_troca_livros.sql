@@ -34,6 +34,7 @@ CREATE TABLE Anuncios (
     id SERIAL PRIMARY KEY,
     data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     data_conclusao TIMESTAMP,
+    ativo BOOLEAN NOT NULL DEFAULT TRUE,
     titulo VARCHAR(255) NOT NULL,
     titulo_livro_oferecido VARCHAR(255) NOT NULL,
     autor_livro_oferecido VARCHAR(255) NOT NULL,
