@@ -43,6 +43,7 @@
   - id INT (PK)
   - data_criacao 
   - data_conclusao 
+  - ativo
   - titulo 
   - titulo_livro_oferecido
   - autor_livro_oferecido 
