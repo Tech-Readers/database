@@ -40,7 +40,7 @@
     em que um novo registro é inserido na tabela.
 
 **2. Anuncios** :heavy_check_mark:
-  - id INT (PK)
+  - id (PK)
   - data_criacao 
   - data_conclusao 
   - ativo
@@ -52,7 +52,7 @@
   - autor_livro_solicitado 
   - genero_livro_oferecido 
   - descricao 
-  - anunciante_id INT (FK para Usuarios)
+  - anunciante_id (FK para Usuarios)
   - **OBS:**
     - data_criacao com cláusula DEFAULT CURRENT_TIMESTAMP: Define que por padrão, será preenchida com a data e hora atuais no momento
     em que um novo registro é inserido na tabela.
@@ -63,8 +63,8 @@
   - nota
   - comentario
   - qtd_like INT
-  - usuario_avaliador_id INT (FK para Usuarios)
-  - anuncio_id INT (FK para Anuncios)
+  - usuario_avaliador_id (FK para Usuarios)
+  - anuncio_id (FK para Anuncios)
   
   - **OBS:**
     - data_avaliacao com cláusula DEFAULT CURRENT_TIMESTAMP: Define que por padrão, será preenchida com a data e hora atuais no momento
