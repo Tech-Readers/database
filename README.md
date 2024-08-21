@@ -34,7 +34,7 @@
   - telefone (ATENÇÃO: atributo multivalorado)
   - endereco (logradouro, numero, municipio, estado, CEP) (ATENÇÃO: Atributo composto)
   - data_cadastro
-  - imagem
+  - image
   - **OBS:**
     - email com a cláusula UNIQUE: Restrição que garante que todos os valores na coluna email sejam únicos em toda a tabela.
     - data_cadastro com cláusula DEFAULT CURRENT_TIMESTAMP: Define que por padrão, será preenchida com a data e hora atuais no momento
@@ -54,7 +54,7 @@
   - genero_livro_oferecido 
   - descricao 
   - anunciante_id (FK para Usuarios)
-  - imagem
+  - image
   - **OBS:**
     - data_criacao com cláusula DEFAULT CURRENT_TIMESTAMP: Define que por padrão, será preenchida com a data e hora atuais no momento
     em que um novo registro é inserido na tabela.
