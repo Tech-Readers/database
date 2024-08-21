@@ -21,6 +21,7 @@ CREATE TABLE Usuarios (
     senha VARCHAR(255) NOT NULL,
     data_cadastro TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     endereco_id UUID NOT NULL,
+    image VARCHAR(500),
     FOREIGN KEY (endereco_id) REFERENCES Enderecos(id)
 );
 
@@ -47,6 +48,7 @@ CREATE TABLE Anuncios (
     genero_livro_solicidado VARCHAR(100) NOT NULL,
     descricao TEXT,
     anunciante_id UUID NOT NULL,
+    image VARCHAR(500),
     FOREIGN KEY (anunciante_id) REFERENCES Usuarios(id)
 );
 
