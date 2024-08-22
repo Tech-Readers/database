@@ -64,7 +64,7 @@
   - data_avaliacao
   - nota
   - comentario
-  - qtd_like INT
+  - qtd_like 
   - usuario_avaliador_id (FK para Usuarios)
   - anuncio_id (FK para Anuncios)
   
@@ -76,7 +76,7 @@
   - id (PK)
   - usuario_remetente_id (FK para Usuário)
   - usuario_destinatario_id (FK para Usuário)
-  - anuncio_id INT (FK para Anuncios)
+  - anuncio_id (FK para Anuncios)
   - texto
   - data_envio
   - lido (false, true)
