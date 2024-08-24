@@ -28,59 +28,59 @@
 <p align="justify">
 
 **1. Usuarios** :heavy_check_mark:
-  - id (PK)
-  - nome
-  - email
-  - senha (ATENÇÃO: Deverá ser permitido apenas um cadastro por email)
-  - telefone (ATENÇÃO: atributo multivalorado)
+  - id (PK) VARCHAR (UUID)
+  - nome VARCHAR
+  - email VARCHAR
+  - senha (ATENÇÃO: Deverá ser permitido apenas um cadastro por email) VARCHAR
+  - telefone (ATENÇÃO: atributo multivalorado) 
   - endereco (logradouro, numero, municipio, estado, CEP) (ATENÇÃO: Atributo composto)
-  - data_cadastro
-  - image
+  - data_cadastro TIMESTAMP
+  - image VARCHAR
   - **OBS:**
     - email com a cláusula UNIQUE: Restrição que garante que todos os valores na coluna email sejam únicos em toda a tabela.
     - data_cadastro com cláusula DEFAULT CURRENT_TIMESTAMP: Define que por padrão, será preenchida com a data e hora atuais no momento
     em que um novo registro é inserido na tabela.
 
 **2. Anuncios** :heavy_check_mark:
-  - id (PK)
-  - data_criacao 
-  - data_conclusao 
-  - ativo
-  - titulo 
-  - titulo_livro_oferecido
-  - autor_livro_oferecido 
-  - genero_livro_oferecido 
-  - titulo_livro_solicitado 
-  - autor_livro_solicitado 
-  - genero_livro_oferecido 
-  - descricao 
-  - anunciante_id (FK para Usuarios)
-  - image
+  - id (PK) VARCHAR (UUID)
+  - data_criacao TIMESTAMP
+  - data_conclusao TIMESTAMP
+  - ativo BOOLEAN
+  - titulo VARCHAR
+  - titulo_livro_oferecido VARCHAR
+  - autor_livro_oferecido VARCHAR
+  - genero_livro_oferecido VARCHAR
+  - titulo_livro_solicitado VARCHAR
+  - autor_livro_solicitado VARCHAR
+  - genero_livro_oferecido VARCHAR
+  - descricao TEXT
+  - anunciante_id (FK para Usuarios) VARCHAR (UUID)
+  - image VARCHAR
   - **OBS:**
     - data_criacao com cláusula DEFAULT CURRENT_TIMESTAMP: Define que por padrão, será preenchida com a data e hora atuais no momento
     em que um novo registro é inserido na tabela.
    
 **3. Avaliacoes** :heavy_check_mark:
-  - id (PK)
-  - data_avaliacao
-  - nota
-  - comentario
-  - qtd_like 
-  - usuario_avaliador_id (FK para Usuarios)
-  - anuncio_id (FK para Anuncios)
+  - id (PK) VARCHAR (UUID)
+  - data_avaliacao TIMESTAMP
+  - nota INT
+  - comentario TEXT
+  - qtd_like INT
+  - usuario_avaliador_id (FK para Usuarios) VARCHAR (UUID)
+  - anuncio_id (FK para Anuncios) VARCHAR (UUID)
   
   - **OBS:**
     - data_avaliacao com cláusula DEFAULT CURRENT_TIMESTAMP: Define que por padrão, será preenchida com a data e hora atuais no momento
     em que um novo registro é inserido na tabela.
 
 **4. Mensagens** :heavy_check_mark:
-  - id (PK)
-  - usuario_remetente_id (FK para Usuário)
-  - usuario_destinatario_id (FK para Usuário)
-  - anuncio_id (FK para Anuncios)
-  - texto
-  - data_envio
-  - lido (false, true)
+  - id (PK) VARCHAR (UUID)
+  - usuario_remetente_id (FK para Usuário) VARCHAR (UUID)
+  - usuario_destinatario_id (FK para Usuário) VARCHAR (UUID)
+  - anuncio_id (FK para Anuncios) VARCHAR (UUID)
+  - texto TEXT
+  - data_envio TIMESTAMP
+  - lido (false, true) BOOLEAN 
   - **OBS:**
     - data_envio com cláusula DEFAULT CURRENT_TIMESTAMP: Define que por padrão, será preenchida com a data e hora atuais no momento
     em que um novo registro é inserido na tabela.
