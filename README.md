@@ -30,6 +30,7 @@
 **1. Usuarios** :heavy_check_mark:
   - id (PK) VARCHAR (UUID)
   - nome VARCHAR
+  - bio VARCHAR
   - email VARCHAR
   - senha (ATENÇÃO: Deverá ser permitido apenas um cadastro por email) VARCHAR
   - telefone (ATENÇÃO: atributo multivalorado) 
@@ -77,7 +78,6 @@
   - id (PK) VARCHAR (UUID)
   - usuario_remetente_id (FK para Usuário) VARCHAR (UUID)
   - usuario_destinatario_id (FK para Usuário) VARCHAR (UUID)
-  - anuncio_id (FK para Anuncios) VARCHAR (UUID)
   - texto TEXT
   - data_envio TIMESTAMP
   - lido (false, true) BOOLEAN 
@@ -125,10 +125,6 @@
     - usuario_remetente_id em Mensagens refere-se a id em Usuarios.
     - usuario_destinatario_id em Mensagens refere-se a id em Usuarios.
 
-**7. Anuncios e Mensagens:** :heavy_check_mark:
-  - Relacionamento: Um-para-Muitos (1:N).
-  - Um anúncio pode estar associado a várias mensagens (discussões sobre o anúncio), mas cada mensagem está associada a um único anúncio.
-  - Chave Estrangeira: anuncio_id em Mensagens refere-se a id em Anuncios.
  
 ... 
 
