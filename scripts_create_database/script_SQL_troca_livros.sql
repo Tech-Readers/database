@@ -17,6 +17,7 @@ CREATE TABLE Enderecos (
 CREATE TABLE Usuarios (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     nome VARCHAR(255) NOT NULL,
+    bio VARCHAR(255),
     email VARCHAR(255) UNIQUE NOT NULL,
     senha VARCHAR(255) NOT NULL,
     data_cadastro TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -60,10 +61,8 @@ CREATE TABLE Mensagens (
     lido BOOLEAN NOT NULL DEFAULT FALSE,
     usuario_remetente_id UUID NOT NULL,
     usuario_destinatario_id UUID NOT NULL,
-    anuncio_id UUID NOT NULL,
     FOREIGN KEY (usuario_remetente_id) REFERENCES Usuarios(id),
     FOREIGN KEY (usuario_destinatario_id) REFERENCES Usuarios(id),
-    FOREIGN KEY (anuncio_id) REFERENCES Anuncios(id)
 );
 
 -- Tabela Avaliacoes
